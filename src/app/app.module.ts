@@ -4,11 +4,13 @@ import { FileHelpersModule } from 'ngx-file-helpers';
 
 import { AppComponent } from './app.component';
 import { FilebrowserComponent } from './filebrowser/filebrowser.component';
+import { PlayconsoleComponent } from './playconsole/playconsole.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilebrowserComponent
+    FilebrowserComponent,
+    PlayconsoleComponent
   ],
   imports: [
     BrowserModule,
