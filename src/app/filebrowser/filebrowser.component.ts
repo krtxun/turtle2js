@@ -9,26 +9,24 @@ import { FilePickerDirective, ReadFile, ReadMode } from 'ngx-file-helpers';
 } )
 export class FilebrowserComponent {
 
-    public fileContent;
+    public readMode = ReadMode.text;
+    public picked: ReadFile;
+    public status: string;
+    public readContents: string;
 
-    constructor() {
-        this.fileContent;
+    @ViewChild(FilePickerDirective)
+    private filePicker;
+
+    onReadStart(fileCount: number) {
+      this.status = `Reading the file...`;
     }
 
-    fileLoader( $event ): void {
-        console.log( $event );
-        this.loadFile( $event.target );
+    onFilePicked(file: ReadFile) {
+      this.picked = file;
+      this.readContents = JSON.parse(file.content);
     }
 
-    loadFile( inputValue: any ): void {
-        var file: File = inputValue.files[0];
-        var fileReader: FileReader = new FileReader();
-        var fileType = inputValue.parentElement.id;
-        fileReader.onloadend = ( e ) => {
-            console.log( fileReader.result );
-            this.fileContent = fileReader.result;
-        }
-        fileReader.readAsText(file);
-        console.log(this.fileContent);
+    onReadEnd(fileCount: number) {
+      this.filePicker.reset();
     }
 }
