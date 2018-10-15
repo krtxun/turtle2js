@@ -1,0 +1,14 @@
+
+<h2>Step 1: Choose the config file</h2>
+<input type="file" (config)="fileLoader($event)" #input />
+<p>
+</p>
+<h2>Step 2: Choose the game sequence file</h2>
+<button
+  type="button"
+  ngxFilePicker
+  accept="application/json"
+  (sequencefilePick)="file = $event">
+  Pick your sequence file
+</button>
+<hr/>

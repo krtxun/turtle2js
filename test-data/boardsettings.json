@@ -1,0 +1,18 @@
+{
+	"rows": 3,
+  	"columns" : 4,
+  	"exit-location" : {
+  		"x" : 4,
+  		"y" : 1
+  	},
+  	"start-location" : {
+  		"x" : 0,
+  		"y" : 2
+  	},
+  	"start-direction" : "North",
+  	"mine-locations" : [
+  		{"x" : 1, "y": 2},
+  		{"x" : 3, "y": 2},
+  		{"x" : 3, "y": 0},
+  	]
+  }
